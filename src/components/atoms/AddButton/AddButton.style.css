@@ -1,4 +1,4 @@
-.add-button-style {
+.add-button {
   color: white;
   font-weight: bold;
   padding: 10px;
@@ -11,7 +11,7 @@
   cursor: pointer;
 }
 
-.add-button-style:disabled {
+.add-button:disabled {
   background-color: lightgray;
   cursor: default;
 }

@@ -1,12 +1,15 @@
 import React from "react";
 import "./AddButton.style.css";
 
+export const mainClass = "add-button";
+
 const AddButton = ({ text, onClickEvent = null, disabled = false }) => {
   return (
     <button
-      className="add-button-style"
+      className={mainClass}
       onClick={onClickEvent}
       disabled={disabled}
+      data-testid={mainClass}
     >
       {text}
     </button>
