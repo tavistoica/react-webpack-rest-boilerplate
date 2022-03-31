@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test": "jest --coverage",
-    "lint": "eslint src --fix --ext .js,.jsx"
+    "lint": "eslint src --fix --ext .js,.jsx",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
