@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./AddButton.style.css";
 
 export const mainClass = "add-button";
@@ -14,6 +15,12 @@ const AddButton = ({ text, onClickEvent = null, disabled = false }) => {
       {text}
     </button>
   );
+};
+
+AddButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClickEvent: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 export default AddButton;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import RemoveButton from "../../atoms/RemoveButton/RemoveButton";
 
 import "./TodoCard.style.css";
@@ -14,6 +15,12 @@ const TodoCard = ({ id, message, removeTodo }) => {
       <RemoveButton onClickEvent={handleRemove} />
     </div>
   );
+};
+
+TodoCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
+  removeTodo: PropTypes.func.isRequired,
 };
 
 export default TodoCard;

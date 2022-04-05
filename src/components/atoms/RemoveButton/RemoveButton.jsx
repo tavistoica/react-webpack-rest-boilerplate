@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./RemoveButton.style.css";
 
 import { REMOVE_TEXT } from "../../../utils/constants";
@@ -16,6 +17,11 @@ const RemoveButton = ({ onClickEvent = null, disabled = false }) => {
       {REMOVE_TEXT}
     </button>
   );
+};
+
+RemoveButton.propTypes = {
+  onClickEvent: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 export default RemoveButton;

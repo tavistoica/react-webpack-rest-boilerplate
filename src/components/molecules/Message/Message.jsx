@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import "./Message.style.css";
 
@@ -10,6 +11,11 @@ const Message = ({ message, type }) => {
       <div>{message}</div>
     </div>
   ) : null;
+};
+
+Message.propTypes = {
+  message: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default Message;

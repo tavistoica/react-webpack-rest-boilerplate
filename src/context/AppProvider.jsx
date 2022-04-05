@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useReducer } from "react";
+import PropTypes from "prop-types";
 import { appProviderReducer } from "../reducers/appReducer";
 import { appProviderActions } from "../actions/appProvider";
 
@@ -28,6 +29,13 @@ const AppProvider = ({ children }) => {
       {children}
     </AppProviderContext.Provider>
   );
+};
+
+AppProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 export default AppProvider;

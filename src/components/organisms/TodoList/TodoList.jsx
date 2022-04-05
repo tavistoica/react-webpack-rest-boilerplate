@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import TodoCard from "../../molecules/TodoCard/TodoCard";
 
 import "./TodoList.style.css";
@@ -28,6 +29,15 @@ const TodoList = ({ state, actions }) => {
   }, [state.todos]);
 
   return <div className={mainClass}>{todosList}</div>;
+};
+
+TodoList.propTypes = {
+  state: PropTypes.shape({
+    todos: PropTypes.array.isRequired,
+  }),
+  actions: PropTypes.shape({
+    removeTodo: PropTypes.func.isRequired,
+  }),
 };
 
 export default TodoList;

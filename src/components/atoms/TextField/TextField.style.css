@@ -1,4 +1,4 @@
-.search {
+.text-field {
   border: 1px solid rgba(203, 213, 224);
   border-radius: 5px;
   width: 100%;
@@ -7,17 +7,17 @@
   font-weight: 400;
 }
 
-.search:hover,
-.search:focus {
+.text-field:hover,
+.text-field:focus {
   border: 1px solid #009688;
   background-color: white;
 }
 
-.search:after {
+.text-field:after {
   box-sizing: border-box;
   border: 1px solid #e2e8f0;
 }
 
-.search::placeholder {
+.text-field::placeholder {
   color: rgba(203, 213, 224);
 }

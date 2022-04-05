@@ -1,4 +1,4 @@
-.remove-button-style {
+.remove-button {
   color: lightcoral;
   font-weight: bold;
   font-size: 18px;
@@ -10,6 +10,6 @@
   outline: inherit;
 }
 
-.remove-button-style:disabled {
+.remove-button:disabled {
   background-color: lightgray;
 }

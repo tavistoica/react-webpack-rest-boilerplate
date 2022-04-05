@@ -12,7 +12,7 @@ const Main = () => {
   return (
     <div className="main-page-container">
       {state.messages.map((item) => (
-        <Message message={item.message} type="error" />
+        <Message message={item.message} type="error" key={item.message} />
       ))}
       <AddTodoForm />
       <TodoList state={state} actions={actions} />

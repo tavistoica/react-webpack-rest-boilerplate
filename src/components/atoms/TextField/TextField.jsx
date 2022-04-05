@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./TextField.style.css";
 
 import { TODO_PLACEHOLDER } from "../../../utils/constants";
@@ -16,6 +17,11 @@ const TextField = ({ onChange, value }) => {
       onChange={onChange}
     />
   );
+};
+
+TextField.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default TextField;

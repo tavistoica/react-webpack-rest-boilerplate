@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 const production = process.env.NODE_ENV === "production";
 const mode = production ? "production" : "development";
@@ -44,6 +45,7 @@ module.exports = {
       template: "public/index.html",
       favicon: "public/favicon.ico",
     }),
+    new ESLintPlugin(),
   ],
   devServer: {
     host: "localhost",
