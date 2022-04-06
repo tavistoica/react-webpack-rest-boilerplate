@@ -7,16 +7,18 @@ import {
   REMOVE_TODO_SUCCESS,
   REMOVE_TODO_ERROR,
 } from "../actions/types";
-import { applicationJson } from "../utils/constants";
+import { APPLICATION_JSON, BACKEND_URL } from "../utils/constants";
+
+const commonHeaders = {
+  "Content-Type": APPLICATION_JSON,
+  Accept: APPLICATION_JSON,
+};
 
 export const addTodo = async (dispatch, body) => {
   try {
-    const response = await fetch("http://localhost:3001/todo/", {
+    const response = await fetch(`${BACKEND_URL}/todo/`, {
       method: "POST",
-      headers: {
-        "Content-Type": applicationJson,
-        Accept: applicationJson,
-      },
+      headers: commonHeaders,
       body: JSON.stringify(body),
     });
 
@@ -36,12 +38,9 @@ export const addTodo = async (dispatch, body) => {
 
 export const getAllTodos = async (dispatch) => {
   try {
-    const response = await fetch("http://localhost:3001/todo/", {
+    const response = await fetch(`${BACKEND_URL}/todo/`, {
       method: "GET",
-      headers: {
-        "Content-Type": applicationJson,
-        Accept: applicationJson,
-      },
+      headers: commonHeaders,
     });
 
     const data = await response.json();
@@ -60,12 +59,9 @@ export const getAllTodos = async (dispatch) => {
 
 export const removeTodo = async (dispatch, id) => {
   try {
-    const response = await fetch(`http://localhost:3001/todo/${id}`, {
+    const response = await fetch(`${BACKEND_URL}/todo/${id}`, {
       method: "DELETE",
-      headers: {
-        "Content-Type": applicationJson,
-        Accept: applicationJson,
-      },
+      headers: commonHeaders,
     });
 
     if (!response.ok) {

@@ -4,7 +4,7 @@ import TodoCard from "../../molecules/TodoCard/TodoCard";
 
 import "./TodoList.style.css";
 
-const mainClass = "todo-list";
+export const mainClass = "todo-list";
 
 const TodoList = ({ state, actions }) => {
   const [todosList, setTodosList] = useState(null);

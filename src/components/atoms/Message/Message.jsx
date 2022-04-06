@@ -3,14 +3,12 @@ import PropTypes from "prop-types";
 
 import "./Message.style.css";
 
+export const mainClass = "message-container";
+
 const Message = ({ message, type }) => {
   const [visible, setVisible] = useState(true);
 
-  return visible ? (
-    <div className={`message-container ${type}`}>
-      <div>{message}</div>
-    </div>
-  ) : null;
+  return visible && <div className={`${mainClass} ${type}`}>{message}</div>;
 };
 
 Message.propTypes = {
