@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "build:clean": "rimraf ./{dist}",
+    "build:server": "webpack --config webpack.config.js",
+    "build": "npm run build:clean && npm run build:server",
+    "start": "webpack serve",
+    "dev": "webpack-dev-server",
     "test": "jest --coverage",
     "lint": "eslint src --fix --ext .js,.jsx",
     "prepare": "husky install"
