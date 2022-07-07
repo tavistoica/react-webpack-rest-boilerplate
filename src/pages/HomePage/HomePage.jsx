@@ -13,7 +13,6 @@ const HomePage = () => {
 
   return (
     <div className={mainClass}>
-      {console.log("state", state.messages)}
       {state.messages.map((item) => (
         <Message
           message={item.message.detail}
