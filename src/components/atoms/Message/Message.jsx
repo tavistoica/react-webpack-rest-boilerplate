@@ -8,7 +8,19 @@ export const mainClass = "message-container";
 const Message = ({ message, type }) => {
   const [visible, setVisible] = useState(true);
 
-  return visible && <div className={`${mainClass} ${type}`}>{message}</div>;
+  return (
+    visible && (
+      <div className={`${mainClass} ${type}`}>
+        <div className={`${mainClass}__message`}>{message}</div>
+        <button
+          className={`${mainClass}__close`}
+          onClick={() => setVisible(false)}
+        >
+          X
+        </button>
+      </div>
+    )
+  );
 };
 
 Message.propTypes = {

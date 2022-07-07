@@ -14,7 +14,7 @@ const TodoList = ({ state, actions }) => {
   useEffect(() => {
     setTodosList(
       state.todos
-        .map((item) => {
+        ?.map((item) => {
           return (
             <TodoCard
               message={item.message}

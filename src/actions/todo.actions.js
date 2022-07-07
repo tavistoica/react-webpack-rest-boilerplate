@@ -3,7 +3,6 @@ import {
   ADD_TODO_ERROR,
   GET_ALL_TODOS_ERROR,
   GET_ALL_TODOS_SUCCESS,
-  APPLICATION_ERROR,
   REMOVE_TODO_SUCCESS,
   REMOVE_TODO_ERROR,
 } from "../actions/types";
@@ -32,7 +31,10 @@ export const addTodo = async (dispatch, body) => {
 
     dispatch({ type: ADD_TODO_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: APPLICATION_ERROR, payload: error });
+    return dispatch({
+      type: ADD_TODO_ERROR,
+      payload: error,
+    });
   }
 };
 
@@ -50,10 +52,12 @@ export const getAllTodos = async (dispatch) => {
         payload: data,
       });
     }
-
     return dispatch({ type: GET_ALL_TODOS_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: APPLICATION_ERROR, payload: error });
+    return dispatch({
+      type: GET_ALL_TODOS_ERROR,
+      payload: error,
+    });
   }
 };
 
@@ -73,6 +77,9 @@ export const removeTodo = async (dispatch, id) => {
 
     dispatch({ type: REMOVE_TODO_SUCCESS, payload: id });
   } catch (error) {
-    dispatch({ type: APPLICATION_ERROR, payload: error });
+    return dispatch({
+      type: REMOVE_TODO_ERROR,
+      payload: error,
+    });
   }
 };

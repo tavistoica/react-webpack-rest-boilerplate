@@ -13,8 +13,13 @@ const HomePage = () => {
 
   return (
     <div className={mainClass}>
+      {console.log("state", state.messages)}
       {state.messages.map((item) => (
-        <Message message={item.message} type="error" key={item.message} />
+        <Message
+          message={item.message.detail}
+          type="error"
+          key={item.message.type}
+        />
       ))}
       <AddTodoForm />
       <TodoList state={state} actions={actions} />
